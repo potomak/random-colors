@@ -1,0 +1,10 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$default-color: <%= ColorsController::DEFAULT_COLOR %>;
+
+body {
+  background-color: $default-color;
+  color: complement($default-color);
+}

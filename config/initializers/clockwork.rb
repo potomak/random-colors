@@ -6,6 +6,8 @@ include Clockwork
 
 every(3.seconds, 'Add a random color') { Color.new.randomize.save }
 
-Thread.new do
-  Clockwork.run
+unless Rails.env.test?
+  Thread.new do
+    Clockwork.run
+  end
 end

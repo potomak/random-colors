@@ -11,6 +11,10 @@ class Color < ActiveRecord::Base
     self
   end
 
+  def serializable_hash(options = {})
+    super(options.merge(methods: :to_hex))
+  end
+
   private
 
   def hex(val)
